@@ -1,6 +1,6 @@
 import random
 
-from flask import Flask
+from flask import Flask,render_template
 app = Flask(__name__)
 
 def read_word_list():
@@ -11,14 +11,20 @@ def read_word_list():
 word_list = read_word_list()
 
 def create_password():
-  word_1 = str(random.choice(word_list)).title()
-  word_2 = str(random.choice(word_list)).title()
+  words = []
+  for i in range(4):
+    words.append(str(random.choice(word_list)).title())
   digits = str(random.randint(0,9999)).zfill(4)
   symbol = random.choice('!@#$%^&*()_')
-  password= str(word_1 + word_2 + digits + symbol)
+  password= str(''.join(words) + digits + symbol)
   return password
 
-@app.route('/')
+@app.route("/")
+def display_password():
+    password = create_password()
+    return render_template('index.html', password=password)
+
+@app.route('/api')
 def generate_password():
     password = create_password()
     return password
