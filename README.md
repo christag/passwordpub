@@ -33,13 +33,13 @@ A Dockerfile is included to build a container for flaskpass.
 Build the container
 
 ```
-docker build -t flaskpass:latest .
+docker image build -t flaskpass:latest .
 ```
 
 Run the docker container
 
 ```
-docker run -d -p 5000:5000 flaskpass:latest
+docker container run -d -p 5000:5000 flaskpass:latest
 ```
 
 Alternatively, you can use docker-compose to quickly bring up a running instance of flaskpass.
