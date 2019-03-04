@@ -10,23 +10,42 @@ def read_word_list():
 
 word_list = read_word_list()
 
-def create_password():
-  words = []
-  for i in range(4):
-    words.append(str(random.choice(word_list)).title())
-  digits = str(random.randint(0,9999)).zfill(4)
-  symbol = random.choice('!@#$%^&*()_')
-  password= str(''.join(words) + digits + symbol)
+# Temporary variables
+temp_configuration = {
+  'number_of_words':3,
+  'use_symbols' : True,
+  'use_numbers' : True,
+  'use_caps' : True,
+  'min_char' : 4,
+  'max_char' : 24,
+  'layout' : 'Wswn'
+}
+
+def create_password(configuration):
+  password = ''
+  #while len(password) < configuration['min_char'] and len(password) > configuration['max_char']:
+   # password = ''
+  for letter in configuration['layout']:
+    if letter == 'W':
+      password+=(str(random.choice(word_list)).title())
+    elif letter == 'w':
+      password+=(str(random.choice(word_list)).lower())
+    elif letter == 's':
+      password+=(random.choice('!@#$%^&*()_'))
+    elif letter == 'n':
+      password+=(str(random.randint(0,9999)))
+    else:
+      return 'Invalid Configuration'
   return password
 
 @app.route("/")
 def display_password():
-    password = create_password()
+    password = create_password(temp_configuration)
     return render_template('index.html', password=password)
 
 @app.route('/api')
 def generate_password():
-    password = create_password()
+    password = create_password(temp_configuration)
     return password
 
 if __name__ == "__main__":

@@ -4,11 +4,11 @@ This is a simple password generator that delivers passwords over HTTP using Pyth
 
 ## Getting Started
 
-Flaskpass can be run with Python3 or with Docker.
+Flaskpass can be run with Python3 and Flask or with Docker.
 
 ### Prerequisites
 
-Python3 is required. Flask is a required Python module that can be installed using pip.
+Docker or Python3 is required. Flask is a required Python module that can be installed using pip.
 
 ```
 python -m pip install flask
@@ -83,7 +83,7 @@ Alternatively, accessing http://127.0.0.1:5000/api will only return a plain-text
 In PowerShell
 
 ```
-$password = (Invoke-WebRequest -uri http://127.0.0.1/api -UseBasicParsing).content
+Invoke-WebRequest -uri http://127.0.0.1/api -UseBasicParsing
 ```
 
 In Bash
@@ -92,9 +92,9 @@ In Bash
 curl http://127.0.0.1/api
 ```
 
-### Advanced Usage
+### Advanced Usage Examples
 
-Change all user's passwords in Active Directory to a random value and ouput the results.
+The following example shows a PowerShell script that can be used to change all user's passwords in Active Directory to a random value and ouput the results.
 
 ```
 $ADUserList = Get-ADUser -Searchbase "OU=Users,dc=domain,dc=net" - Filter *
@@ -117,18 +117,22 @@ Foreach-Object $ADUserList {
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
+--->
+
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
---->
+
 
 ## Authors
 
 * **Christopher Tagliaferro** - *Initial work* - [christag](https://github.com/christag)
 
 <!---
+
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+
 --->
 
 ## License
@@ -138,4 +142,4 @@ This project is licensed under the GNU General Public License v3.0 - see the [LI
 ## Acknowledgments
 
 * Thanks to [PurpleBooth](https://gist.github.com/PurpleBooth) for this great [README.md Template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* Inspired by [bbusschots](https://github.com/bbusschots)'s [xpasswd.net](https://xkpasswd.net), powered by [hsxkpasswd](https://github.com/bbusschots/hsxkpasswd)
+* Inspired by [bbusschots](https://github.com/bbusschots)'s [xpasswd.net](https://xkpasswd.net)/[hsxkpasswd](https://github.com/bbusschots/hsxkpasswd)
