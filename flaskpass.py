@@ -12,10 +12,6 @@ word_list = read_word_list()
 
 # Temporary variables - this will be replaced by Form items and/or POST data later.
 temp_configuration = {
-  'number_of_words':3,
-  'use_symbols' : True,
-  'use_numbers' : True,
-  'use_caps' : True,
   'min_char' : 4,
   'max_char' : 24,
   'layout' : 'Wswn'
