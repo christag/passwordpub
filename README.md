@@ -48,10 +48,6 @@ Alternatively, you can use docker-compose to quickly bring up a running instance
 docker-compose up
 ```
 
-### Please Note
-
-Note that HTTPS is not yet supported so be careful when using this in production systems.
-
 <!---
 ## Running the tests
 
@@ -109,7 +105,7 @@ Foreach-Object $ADUserList {
 ## Built With
 
 * [Flask](http://flask.pocoo.org/) - Web development microframework for Python
-* [Python3](https://www.python.org/download/releases/3.0/) - The Language
+* [Python3](https://www.python.org/download/releases/3.0/) - The language that this app is written in.
 
 <!---
 
