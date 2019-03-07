@@ -28,24 +28,24 @@ default_configuration = {
 
 # Generates a word, letter, number, symbol, etc. to be used as part of the password.
 def generate_member(config_item):
-  if config_item == 'W': # W for UPPERCASE word.
-    return str(random.choice(word_list)).upper()
-  if config_item == 'T': # T for TitleCase word.
-    return str(random.choice(word_list)).title()
-  if config_item == 'w': # w for lowercase word.
-    return str(random.choice(word_list)).lower()
+  if config_item == 'W': # W for UPPER CASE word.
+    return str(random.choice(word_list)).upper() # Take a random word from the attached word list, and make it UPPERCASE.
+  if config_item == 'T': # T for Title Case word.
+    return str(random.choice(word_list)).title() # Take a random word from the attached word list, and make it Title Case.
+  if config_item == 'w': # w for lower case word.
+    return str(random.choice(word_list)).lower() # Take a random word from the attached word list, and make it lower case.
   if config_item == 's': # S for Symbol.
-    return random.choice('!@#$%^&*()_')
+    return random.choice('!@#$%^&*()_') # Take a random character from the string of symbols provided.
   if config_item == 'L': # L for UPPERCASE letter.
-    return random.choice(string.ascii_uppercase)
+    return random.choice(string.ascii_uppercase) # Take a random choice from any UPPER CASE ascii character.
   if config_item == 'l': # l for lowercase letter.
-    return random.choice(string.ascii_lowercase)
+    return random.choice(string.ascii_lowercase) # Take a random choice from any lower case ascii character.
   if config_item == 'N': # n for Number
-    return (str(random.randint(0,9)))
+    return (str(random.randint(0,9))) # Generate a random integer between 0 and 9.
   if config_item =='A': # A for any alphanumeric character.
-    return random.choice(string.ascii_letters + '0123456789')
+    return random.choice(string.ascii_letters + '0123456789') # Combines all UPPER CASE, lower case, and numeric characters in one string and grabs a random choice. 
   if config_item == 'C': # C for any character.
-    return random.choice(string.ascii_letters + '0123456789!@#$%^&*()_')
+    return random.choice(string.ascii_letters + '0123456789!@#$%^&*()_') # Combines all UPPER CASE, lower case, symbols and numeric characters in one string and grabs a random choice.
 
 # Check if any characters in the password are in the banned_chars list.
 def validate_password(password,banned_chars):
