@@ -30,19 +30,19 @@ Flask will load the page and confirm in the terminal when it is running. Press C
 
 A [Dockerfile](container/Dockerfile) is included in the [container](container/) folder to build a container for flaskpass.
 
-Build the container
+Build the container from the parent directory.
 
 ```
-docker image build -t flaskpass:latest ..
+docker image build -t flaskpass:latest -f ./container/Dockerfile .
 ```
 
-Run the docker container
+Run the docker container.
 
 ```
 docker container run -d -p 5000:5000 flaskpass:latest
 ```
 
-Alternatively, you can use docker-compose to quickly bring up a running instance of flaskpass.
+Alternatively, you can use docker-compose from the [container](container) directort to quickly bring up a running instance of flaskpass. 
 
 ```
 docker-compose up
