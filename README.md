@@ -18,7 +18,7 @@ python -m pip install flask
 
 Simply run the python file and the default Flask settings will be used to run the app on port 5000.
 
-Run the flaskpass.py file
+Run the @flaskpass.py file
 
 ```
 python flaskpass.py
@@ -26,14 +26,14 @@ python flaskpass.py
 
 Flask will load the page and confirm in the terminal when it is running. Press CTRL-C to quit the application.
 
-### Running in Docker
+### Running as a Container
 
-A Dockerfile is included to build a container for flaskpass.
+A Dockerfile is included in the @container folder to build a container for flaskpass.
 
 Build the container
 
 ```
-docker image build -t flaskpass:latest .
+docker image build -t flaskpass:latest ..
 ```
 
 Run the docker container
