@@ -22,7 +22,7 @@ max_attempts = 150
 default_configuration = {
   'min_char' : 8, # Minimum amount of characters allowed in the password.
   'max_char' : 50, # Minimum amount of characters allowed in the password.
-  'layout' : 'WsTwNlLs', # The 'recipe' for the password, see generate_member for more info.
+  'layout' : 'WTwsLlNAC', # The 'recipe' for the password, see generate_member for more info.
   'banned_chars' : '' # Banned characters that are not allowed in a password.
 }
 
@@ -42,6 +42,10 @@ def generate_member(config_item):
     return random.choice(string.ascii_lowercase)
   if config_item == 'N': # n for Number
     return (str(random.randint(0,9)))
+  if config_item =='A': # A for any alphanumeric character.
+    return random.choice(string.ascii_letters + '0123456789')
+  if config_item == 'C': # C for any character.
+    return random.choice(string.ascii_letters + '0123456789!@#$%^&*()_')
 
 # Check if any characters in the password are in the banned_chars list.
 def validate_password(password,banned_chars):
