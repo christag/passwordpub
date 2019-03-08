@@ -42,7 +42,7 @@ Run the docker container.
 docker container run -d -p 5000:5000 flaskpass:latest
 ```
 
-Alternatively, you can use docker-compose from the [container](container) directort to quickly bring up a running instance of flaskpass. 
+Alternatively, you can use docker-compose from the [container](container) directory to quickly bring up a running instance of flaskpass. 
 
 ```
 docker-compose up
