@@ -5,14 +5,14 @@ This is a simple password generator that delivers passwords over HTTP using Pyth
 
 ## Getting Started
 
-Password Pub can be run with Python3 and Flask or with Docker.
+Password Pub can be run with Python3 or with Docker.
 
 ### Prerequisites
 
-Python3 is required. Flask is a required Python module that can be installed using pip.
+Python3 is required. Flask and pyyaml are required Python modules that can be from the included requirements file installed using pip.
 
 ```
-python -m pip install flask
+python -m pip install -r requirements
 ```
 
 ### Configuration
@@ -116,23 +116,17 @@ Foreach-Object $ADUserList {
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
---->
 
 ## Versioning
 
 For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-
+--->
 
 ## Authors
 
 * **Christopher Tagliaferro** - *Initial work* - [christag](https://github.com/christag)
 
-<!---
-
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
---->
 
 ## License
 
