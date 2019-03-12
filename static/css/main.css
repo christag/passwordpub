@@ -1,7 +1,13 @@
+
+
 body {
     background-color:#aaaaaa;
     background-image: url("../img/bg.png");
     background-repeat: repeat
+}
+
+a {
+    color: #aaaaaa
 }
 
 #title_logo {

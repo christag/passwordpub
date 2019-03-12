@@ -1,0 +1,12 @@
+password_options:
+  min_char: 8 # Minimum amount of characters allowed in the password.
+  max_char: 50 # Minimum amount of characters allowed in the password.
+  layout : 'WSwNWC' # The 'recipe' for the password, see generate_member for more info.
+  banned_chars : '' # Banned characters that are not allowed in a password.
+
+generator_options:
+  max_attempts: 150 # Attempts to create the password before giving up.
+
+server_options:
+  ip_address: '0.0.0.0' # Set to specific IP or set to 0.0.0.0 to listen on all IPs
+  port: '5000'

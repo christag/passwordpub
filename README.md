@@ -5,45 +5,47 @@ This is a simple password generator that delivers passwords over HTTP using Pyth
 
 ## Getting Started
 
-Flaskpass can be run with Python3 and Flask or with Docker.
+Password Pub can be run with Python3 and Flask or with Docker.
 
 ### Prerequisites
 
-Docker or Python3 is required. Flask is a required Python module that can be installed using pip.
+Python3 is required. Flask is a required Python module that can be installed using pip.
 
 ```
 python -m pip install flask
 ```
 
+### Configuration
+
+Update [config.yml](config.yml) to add default options for password generation as well as options to specify the flask IP and port.
+
 ### Running in Python
 
-Simply run the python file and the default Flask settings will be used to run the app on port 5000.
-
-Run the [flaskpass.py](flaskpass.py) file
+Run the [open-for-business.py](open-for-business.py) file
 
 ```
-python flaskpass.py
+python open-for-business.py
 ```
 
 Flask will load the page and confirm in the terminal when it is running. Press CTRL-C to quit the application.
 
 ### Running as a Container
 
-A [Dockerfile](container/Dockerfile) is included in the [container](container/) folder to build a container for flaskpass.
+A [Dockerfile](container/Dockerfile) is included in the [container](container/) folder to build a container for passwordpub.
 
 Build the container from the parent directory.
 
 ```
-docker image build -t flaskpass:latest -f ./container/Dockerfile .
+docker image build -t passwordpub:latest -f ./container/Dockerfile .
 ```
 
-Run the docker container.
+Run the docker container. Change the port if you've updated the configuration file.
 
 ```
-docker container run -d -p 5000:5000 flaskpass:latest
+docker container run -d -p 5000:5000 passwordpub:latest
 ```
 
-Alternatively, you can use docker-compose from the [container](container) directory to quickly bring up a running instance of flaskpass. 
+Alternatively, you can use docker-compose from the [container](container) directory to quickly bring up a running instance of passwordpub. 
 
 ```
 docker-compose up
