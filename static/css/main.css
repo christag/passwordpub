@@ -1,0 +1,88 @@
+body {
+    background-color:#aaaaaa;
+    background-image: url("../img/bg.png");
+    background-repeat: repeat
+}
+
+#title_logo {
+    position: relative;
+    top: 15px;
+    text-align: center;
+}
+
+#title_logo img {
+    width: 70vw;
+    max-width: 500px
+}
+
+.bartender {
+    position: relative;
+    width: 90vw;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.top_menu {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: black;
+    color: #aaaaaa;
+}
+
+.generated_password {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 1%;
+    top: 20%;
+    left: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    font-size: 4vh;
+}
+
+.bartender_inside {
+    display: inline-block
+}
+.bartender_logo {
+    width: 100%;
+}
+
+.bar_top {
+    width: 90vw;
+    max-width: 800px;
+    background-color: black;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bar_main {
+    text-align: center;
+    padding: 6;
+    color: #dddddd;
+    width: 80vw;
+    max-width: 700px;
+    background-color: #333333;
+    margin-left: auto;
+    margin-right: auto;
+    height: 20%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.floor {
+    position: absolute;
+    bottom: 0px;
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+    width: 100vw;
+    left: 0px;
+    color: #cccccc;
+    background-color: black
+}
+
+.floor a{
+    color: #cccccc;
+}

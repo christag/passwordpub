@@ -1,10 +1,27 @@
 <!-- templates/index.html -->  
 <html>  
   <head>
-    <title>Flaskpass: A password generator made with Python3 and Flask</title>
+    <link rel="shortcut icon" href="../static/img/favicon.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Password Pub: A password generator made with Python3 and Flask</title>
+    <link rel="stylesheet" href="../static/css/main.css"> 
   </head>
   <body>
-    <h1>Your password is: {{password}}</h1>
-    <h3>Press refresh for a new one!</h3>
+    <div class="top_menu">
+      Generate.
+    </div>
+    <div id="title_logo">
+      <img src="../static/img/sitelogo.png">
+    </div> 
+    <div class="bartender">
+      <img class="bartender_logo" src="../static/img/bartender_full.png">
+      <div class="generated_password">
+        {{ password }}.
+      </div>
+    </div>
+    <div class="bar_top">I am a bar</div>
+    <div class="bar_main">Refresh for a new password!</div>
+    <div class="floor">Copyright 2019 <a href="https://github.com/christag">Christopher Tagliaferro.</a></div>
   </body>
 </html>  

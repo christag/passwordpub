@@ -1,5 +1,6 @@
-# Flaskpass
+# Password Pub
 
+(formerly flaskpass)
 This is a simple password generator that delivers passwords over HTTP using Python3 and Flask. 
 
 ## Getting Started
