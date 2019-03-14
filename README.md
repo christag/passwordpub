@@ -1,7 +1,6 @@
 # Password Pub
 
-(formerly flaskpass)
-This is a simple password generator that delivers passwords over HTTP using Python3 and Flask. 
+This is a cocktail-bar-themed password generator that delivers passwords over HTTP using Python3 and Flask.
 
 ## Getting Started
 
@@ -75,7 +74,7 @@ Give an example
 
 ## Usage
 
-While running, the application can be accessed in a web browser at http://127.0.0.1:5000, http://localhost:5000, etc. This loads the basic web page with flavor text surrounding the password. 
+While running, the application can be accessed in a web browser at http://127.0.0.1:5000, http://localhost:5000, etc. This loads the graphical index.html where a clipart bartender will present a new password on the screen and will generate a new one every time the page is refreshed. The passwords generated here are based on the [config.yml](config.yml) options.
 
 Alternatively, accessing http://127.0.0.1:5000/api will only return a plain-text password. This is better for making REST calls when utilizing the application as part of a larger workflow.
 
