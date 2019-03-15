@@ -103,7 +103,7 @@ The following example shows a PowerShell script that can be used to change all u
 ```
 $ADUserList = Get-ADUser -Searchbase "OU=Users,dc=domain,dc=net" - Filter *
 Foreach-Object $ADUserList {
-    $password = (Invoke-WebRequest -uri http://127.0.0.1/api?recipe=WSTNN -UseBasicParsing).content
+    $password = (Invoke-WebRequest -uri http://127.0.0.1:5000/api?recipe=WSTNN -UseBasicParsing).content
     $securepassword = ConvertTo-SecureString $password -AsPlainText -Force
     Set-ADAccountPassword -Identity $_ -Reset -NewPassword $password
     Write-Host $_.UserPrincipalName ' password set to: '$password
