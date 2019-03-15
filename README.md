@@ -81,13 +81,13 @@ Alternatively, accessing http://127.0.0.1:5000/api will only return a plain-text
 In PowerShell
 
 ```
-Invoke-WebRequest -uri http://127.0.0.1/api -UseBasicParsing
+Invoke-WebRequest -uri http://127.0.0.1:5000/api -UseBasicParsing
 ```
 
 In Bash
 
 ```
-curl http://127.0.0.1/api
+curl http://127.0.0.1:5000/api
 ```
 
 You can also specify password configuration items as query parameters. See the 'password_options' section in [config.yml](config.yml) file for options. Unspecified options will use the default options specified in the [config.yml](config.yml) file.
