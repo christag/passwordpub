@@ -3,7 +3,7 @@ import yaml
 
 # Read the attached wordlist to compile a list of words.
 def read_word_list():
-  f = open("wordlist","r")
+  f = open("bar_kit/todays_specials","r")
   list_of_words = f.read().splitlines()
   return list_of_words
 
