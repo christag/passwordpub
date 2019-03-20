@@ -1,3 +1,7 @@
+'''
+./bar_kit/ops_manual.py
+'''
+
 # Import pyyaml to read config.
 import yaml
 

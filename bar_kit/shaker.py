@@ -1,3 +1,7 @@
+'''
+./bar_kit/shaker.py
+'''
+
 import random, string
 
 from bar_kit.ops_manual import read_word_list
