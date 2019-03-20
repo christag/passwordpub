@@ -90,10 +90,25 @@ In Bash
 curl http://127.0.0.1:5000/api
 ```
 
-You can also specify password configuration items as query parameters. See the 'password_options' section in [config.yml](config.yml) file for options. Unspecified options will use the default options specified in the [config.yml](config.yml) file.
+You can also specify password configuration items as query parameters:
+* min_char: Minimum amount of characters allowed in the password.
+* max_char: Minimum amount of characters allowed in the password.
+* recipe : The 'recipe' for the password, should be a single string of characters from the following list:
+    * 'W' for UPPER CASE word.
+    * 'T' for Title Case word.
+    * 'w' for lower case word.
+    * 'S' for Symbol.
+    * 'L' for UPPERCASE letter.  
+    * 'l' for lowercase letter.
+    * 'n' for random integer between 0 and 9.
+    * 'A' for random choice from all UPPER CASE, lower case, and numeric characters.
+    * 'C' for random choice from all UPPER CASE, lower case, symbols and numeric characters.
+* banned_ingredients : Banned characters that are not allowed in a password.
+
+The 'password_options' section in [config.yml](config.yml) file sets the default options for new requests. Any parameter not specified by a parameter will use these defaults.
 
 ```
-http://127.0.0.1:5000/api?min_char=4&recipe=TTNNS
+http://127.0.0.1:5000?min_char=4&recipe=TTNNS
 ```
 
 ### Advanced Usage Examples
