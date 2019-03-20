@@ -57,6 +57,8 @@ h1 {
     margin: 10px;
     text-align: center;
     min-height: 60px;   
+    font-size: calc(8px + (26 - 8) * ((100vw - 300px) / (1600 - 300)));
+    vertical-align: middle
 }
 
 .speech-bubble:after {
