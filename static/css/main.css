@@ -1,5 +1,5 @@
 body {
-    background-color:#111111
+    background-color:#222222
 }
 
 a {
@@ -12,8 +12,8 @@ h1 {
 
 #title_logo {
     position: relative;
-    top: 3vh;
-    text-align: center
+    top: 15px;
+    text-align: center;
 }
 
 #title_logo img {
@@ -47,6 +47,7 @@ h1 {
     width: 70vw;
     margin-left: auto;
     margin-right: auto;
+    word-wrap: break-word;
 }
 
 .speech-bubble {
