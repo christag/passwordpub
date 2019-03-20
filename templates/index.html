@@ -9,18 +9,18 @@
   </head>
   <body>
     <div class="top_menu">
-      Generate secure passwords. Copyright 2019 <a href="https://github.com/christag">Christopher Tagliaferro.</a>
+      Generate secure passwords. <b>Refresh the page for a new one!</b> See the <a href="../README.md">readme</a> for additional instructions. Copyright 2019 <a href="https://github.com/christag">Christopher Tagliaferro.</a>
     </div>
     <div id="title_logo">
       <img src="../static/img/sitelogo.png">
     </div> 
-    <div class="bartender">
-      <img class="bartender_logo" src="../static/img/bartender_full.png">
-      <div class="generated_password">
-        {{ password }}
-      </div>
+    <div class="bartender-container">
+      <img class="bartender"> <!-- Make this image in PS! -->
     </div>
-    <div class="bar_top">I am a bar</div>
-    <div class="bar_main">Refresh for a new password!</div>
+    <div class="speech-bubble-container">
+      <hgroup class="speech-bubble">
+        <h1>{{ password }}</h1>
+     </hgroup>
+   </div>
   </body>
 </html>  
