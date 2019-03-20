@@ -1,4 +1,5 @@
 <!-- templates/index.html -->  
+<!DOCTYPE html>
 <html>  
   <head>
     <link rel="shortcut icon" href="../static/img/favicon.ico" type="image/x-icon">
@@ -9,18 +10,15 @@
   </head>
   <body>
     <div class="top_menu">
-      Generate secure passwords. <b>Refresh the page for a new one!</b> See the <a href="../README.md">readme</a> for additional instructions. Copyright 2019 <a href="https://github.com/christag">Christopher Tagliaferro.</a>
+      Generate secure passwords. | <a href="javascript:window.location.reload(true)">New Password</a> |  <a href="../README.md">README</a>
     </div>
     <div id="title_logo">
       <img src="../static/img/sitelogo.png">
     </div> 
-    <div class="bartender-container">
-      <img class="bartender"> <!-- Make this image in PS! -->
-    </div>
     <div class="speech-bubble-container">
-      <hgroup class="speech-bubble">
+      <div class="speech-bubble">
         <h1>{{ password }}</h1>
-     </hgroup>
+      </div>
    </div>
   </body>
 </html>  

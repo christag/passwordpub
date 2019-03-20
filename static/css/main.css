@@ -1,8 +1,5 @@
-
-
 body {
-    background-color:#111111;
-    background-repeat: repeat
+    background-color:#111111
 }
 
 a {
@@ -10,14 +7,13 @@ a {
 }
 
 h1 {
-    font-family: 'Courier New', Courier, monospace;
-
+    font-family: 'Courier New', Courier, monospace
 }
 
 #title_logo {
     position: relative;
-    top: 15px;
-    text-align: center;
+    top: 3vh;
+    text-align: center
 }
 
 #title_logo img {
