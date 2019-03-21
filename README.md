@@ -20,7 +20,7 @@ Update [config.yml](config.yml) to add default options for password generation a
 
 ### Running in Python
 
-Run the [start_server.py.py](start_server.py.py) file
+Run the [start_server.py](start_server.py) file
 
 ```
 python start_server.py
