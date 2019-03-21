@@ -15,5 +15,5 @@ def read_word_list():
 def read_config_file():
   with open("config.yml",'r') as yml_file:
     open_file = yml_file.read()
-    cfg = yaml.load(open_file)
+    cfg = yaml.load(open_file,Loader=yaml.SafeLoader)
     return cfg
