@@ -100,7 +100,7 @@ You can also specify password configuration items as query parameters:
     * 'S' for Symbol.
     * 'L' for UPPERCASE letter.  
     * 'l' for lowercase letter.
-    * 'n' for random integer between 0 and 9.
+    * 'N' for random integer between 0 and 9.
     * 'A' for random choice from all UPPER CASE, lower case, and numeric characters.
     * 'C' for random choice from all UPPER CASE, lower case, symbols and numeric characters.
 * banned_ingredients : Banned characters that are not allowed in a password.
