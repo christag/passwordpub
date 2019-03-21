@@ -10,7 +10,7 @@ import os
 from bar_kit.shaker import mix_drink
 from bar_kit import ops_manual
 
-# 
+# Create a password using the supplied parameters
 def fulfill_order(order):
   pw_options = dict(APP_CONFIGURATION['password_options']) # Set the password options to the defaults.
   for parameter in order: # Checks paremeters in query.
