@@ -1,2 +1,4 @@
 flask
 pyyaml
+pytest
+pytest-flask

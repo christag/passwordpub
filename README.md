@@ -20,10 +20,10 @@ Update [config.yml](config.yml) to add default options for password generation a
 
 ### Running in Python
 
-Run the [open-for-business.py](open-for-business.py) file
+Run the [start_server.py.py](start_server.py.py) file
 
 ```
-python open-for-business.py
+python start_server.py
 ```
 
 Flask will load the page and confirm in the terminal when it is running. Press CTRL-C to quit the application.
