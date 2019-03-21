@@ -8,7 +8,7 @@ Password Pub can be run with Python3 or with Docker.
 
 ### Prerequisites
 
-Python3 is required. Flask and pyyaml are required Python modules that can be from the included requirements file installed using pip.
+Python3 is required. Required modules can be found in the [requirements](requirements) file and can be installed by running:
 
 ```
 python -m pip install -r requirements
