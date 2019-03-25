@@ -16,7 +16,7 @@ python -m pip install -r requirements
 
 ### Configuration
 
-Update [config.yml](config.yml) to add default options for password generation as well as options to specify the flask IP and port.
+Server and password generation defaults can be set by environment variables (see [bar_kit/ops_manual.py](bar_kit/ops_manual.py)) or setting the options in [config.yml](config.yml). Environment variables will be given a higher priority than items in [config.yml](config.yml).
 
 ### Running in Python
 
