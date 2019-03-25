@@ -4,18 +4,20 @@
 
 import random, string
 
-from bar_kit.ops_manual import read_word_list
-
-WORD_LIST = read_word_list() # Create the word list
+# Read the selected wordlist to compile a list of words.
+def read_menu(menu):
+  f = open("bar_kit/menus/" + menu,"r")
+  list_of_words = f.read().splitlines()
+  return list_of_words
 
 # Generates a word, letter, number, symbol, etc. to be used as part of the password.
-def add_ingredient(config_item):
+def add_ingredient(config_item,list_of_words):
   if config_item == 'W': # W for UPPER CASE word.
-    return str(random.choice(WORD_LIST)).upper() # Take a random word from the attached word list, and make it UPPERCASE.
+    return str(random.choice(list_of_words)).upper() # Take a random word from the attached word list, and make it UPPERCASE.
   elif config_item == 'T': # T for Title Case word.
-    return str(random.choice(WORD_LIST)).title() # Take a random word from the attached word list, and make it Title Case.
+    return str(random.choice(list_of_words)).title() # Take a random word from the attached word list, and make it Title Case.
   elif config_item == 'w': # w for lower case word.
-    return str(random.choice(WORD_LIST)).lower() # Take a random word from the attached word list, and make it lower case.
+    return str(random.choice(list_of_words)).lower() # Take a random word from the attached word list, and make it lower case.
   elif config_item == 'S': # S for Symbol.
     return random.choice('!@#$%^&*()_') # Take a random character from the string of symbols provided.
   elif config_item == 'L': # L for UPPERCASE letter.  
@@ -39,17 +41,18 @@ def taste_test(drink,banned_ingredients):
   return True
 
 # Main function that creates the password.
-def mix_drink(pw_options,GEN_OPTIONS):
+def mix_drink(pw_options,bar):
   try_count = 0
-  while try_count < GEN_OPTIONS['max_attempts']: # Only attempts to create the password 'max_attempts' times so as not to get caught in a never-ending loop of a bad password recipe.
+  while try_count < bar.max_attempts: # Only attempts to create the password 'max_attempts' times so as not to get caught in a never-ending loop of a bad password recipe.
     password = '' # Initialize the password.
-    for ingredients in pw_options['recipe']: # Look through the layout key of the configuration to build the ingredients list for the password.
-      new_ingredient = add_ingredient(ingredients) # Pick out a new ingredient
+    for ingredient in pw_options.recipe: # Look through the layout key of the configuration to build the ingredients list for the password.
+      new_ingredient = add_ingredient(ingredient,read_menu(pw_options.menu)) # Pick out a new ingredient
       if new_ingredient != False:
-        password += add_ingredient(ingredients) # Add ingredient to password.
+        password += new_ingredient # Add ingredient to password.
       else:
         return 'Inedible ingredient in recipe. Try again with valid characters only.'
-    if (len(password) < int(pw_options['min_char'])) or (len(password) > int(pw_options['max_char'])) or (taste_test(password,pw_options['banned_ingredients']) == False): # Check if password is beyond length limits.
+    if (len(password) < int(pw_options.min_char)) or (len(password) > int(pw_options.max_char)) or (taste_test(password,pw_options.banned_ingredients) == False): # Check if password is beyond length limits.
+      print(password)
       try_count += 1 # Increment try_count closer to max_attempts and restart the loop, starting a new password.
     else: # Password meets all requirements.
       return password

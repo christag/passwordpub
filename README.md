@@ -104,6 +104,7 @@ You can also specify password configuration items as query parameters:
     * 'A' for random choice from all UPPER CASE, lower case, and numeric characters.
     * 'C' for random choice from all UPPER CASE, lower case, symbols and numeric characters.
 * banned_ingredients : Banned characters that are not allowed in a password.
+* menu: The word list (menu) from the [menus](bar_kit/menus) folder. See [bar_kit/menus/README.md](bar_kit/menus/README.md) for descriptions of each menu.
 
 The 'password_options' section in [config.yml](config.yml) file sets the default options for new requests. Any parameter not specified by a parameter will use these defaults.
 

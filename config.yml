@@ -1,13 +1,13 @@
 # /config.yml  
-password_options: # Default options for generated passwords if no parameters are supplied.
+ip_address: '0.0.0.0' # Set to specific IP or set to 0.0.0.0 to listen on all IPs.
+port: '5000' # Set the port that HTTP traffic will be served.
+secret_key: 'your-secret-key-here' # Secret key to protect flask forms from CSR attacks. 
+max_attempts: 150 # Attempts to create the password before giving up.
+default_options: # Default options for generated passwords if no parameters are supplied.
   min_char: 8 # Minimum amount of characters allowed in the password.
   max_char: 50 # Minimum amount of characters allowed in the password.
+  min_word_char: 2 # Minimum number of characters allowed in a generated 'word' ingredient. (T, W, w)
+  max_word_char: 12 # Maximum number of characters allowed in a generated 'word' ingredient. (T, W, w)
   recipe : 'WSwNWC' # The 'recipe' for the password.
   banned_ingredients : '' # Banned characters that are not allowed in a password.
-
-generator_options:
-  max_attempts: 150 # Attempts to create the password before giving up.
-
-server_options:
-  ip_address: '0.0.0.0' # Set to specific IP or set to 0.0.0.0 to listen on all IPs.
-  port: '5000' # Set the port that HTTP traffic will be served.
+  menu: 'full_menu' # The default word list to use for word generation
