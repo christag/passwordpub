@@ -33,11 +33,12 @@ h1 {
 }
 
 .bartender-container {
-    margin-left: 12vw;
+    margin-left: 11vw;
 }
 
 .bartender {
     width: 30vw;
+    min-width: 240pt
 }
 
 .bartender-image {
