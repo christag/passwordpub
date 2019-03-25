@@ -52,7 +52,6 @@ def mix_drink(pw_options,bar):
       else:
         return 'Inedible ingredient in recipe. Try again with valid characters only.'
     if (len(password) < int(pw_options.min_char)) or (len(password) > int(pw_options.max_char)) or (taste_test(password,pw_options.banned_ingredients) == False): # Check if password is beyond length limits.
-      print(password)
       try_count += 1 # Increment try_count closer to max_attempts and restart the loop, starting a new password.
     else: # Password meets all requirements.
       return password
