@@ -5,19 +5,25 @@
 import random, string
 
 # Read the selected wordlist to compile a list of words.
-def read_menu(menu):
+def read_menu(menu,word_min,word_max):
   f = open("bar_kit/menus/" + menu,"r")
   list_of_words = f.read().splitlines()
-  return list_of_words
+  word_list = []
+  for word in list_of_words:
+    if len(word) >= int(word_min) and len(word) <= int(word_max):
+      word_list.append(word)
+  return word_list
 
 # Generates a word, letter, number, symbol, etc. to be used as part of the password.
-def add_ingredient(config_item,list_of_words):
+def add_ingredient(config_item,word_list):
+  if len(word_list) == 0:
+    return False
   if config_item == 'W': # W for UPPER CASE word.
-    return str(random.choice(list_of_words)).upper() # Take a random word from the attached word list, and make it UPPERCASE.
+    return str(random.choice(word_list)).upper() # Take a random word from the attached word list, and make it UPPERCASE.
   elif config_item == 'T': # T for Title Case word.
-    return str(random.choice(list_of_words)).title() # Take a random word from the attached word list, and make it Title Case.
+    return str(random.choice(word_list)).title() # Take a random word from the attached word list, and make it Title Case.
   elif config_item == 'w': # w for lower case word.
-    return str(random.choice(list_of_words)).lower() # Take a random word from the attached word list, and make it lower case.
+    return str(random.choice(word_list)).lower() # Take a random word from the attached word list, and make it lower case.
   elif config_item == 'S': # S for Symbol.
     return random.choice('!@#$%^&*()_') # Take a random character from the string of symbols provided.
   elif config_item == 'L': # L for UPPERCASE letter.  
@@ -46,7 +52,7 @@ def mix_drink(pw_options,bar):
   while try_count < bar.max_attempts: # Only attempts to create the password 'max_attempts' times so as not to get caught in a never-ending loop of a bad password recipe.
     password = '' # Initialize the password.
     for ingredient in pw_options.recipe: # Look through the layout key of the configuration to build the ingredients list for the password.
-      new_ingredient = add_ingredient(ingredient,read_menu(pw_options.menu)) # Pick out a new ingredient
+      new_ingredient = add_ingredient(ingredient,read_menu(pw_options.menu,pw_options.min_word_char,pw_options.max_word_char)) # Pick out a new ingredient
       if new_ingredient != False:
         password += new_ingredient # Add ingredient to password.
       else:
