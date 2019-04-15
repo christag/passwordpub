@@ -1,11 +1,31 @@
 # ./container/docker-compose.yml
 version: '3'
 services:
-  passsword_pub:
+  nginx:
+    image: nginx
+#    build:     # For future use.
+#      context: ../
+#      dockerfile: container/nginx/Dockerfile
+    container_name: nginx
+    depends_on:
+        - password_pub
+    networks:
+        - password_pub_network
+    ports:
+        - 80:80
+        - 443:443
+    volumes:
+        - ../bar_kit/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+  password_pub:
     build:
       context: ../
-      dockerfile: container/Dockerfile
-    ports:
-     - "5000:5000"
+      dockerfile: container/app/Dockerfile
+    container_name: password_pub
     volumes:
-     - ..:/code
+        - ..:/code
+    networks:
+      password_pub_network:
+        aliases:
+            - flask
+networks:
+    password_pub_network:
