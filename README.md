@@ -44,10 +44,11 @@ Run the docker container. Change the port if you've updated the configuration fi
 docker container run -d -p 5000:5000 passwordpub:latest
 ```
 
-Alternatively, you can use docker-compose from the [container](container) directory to quickly bring up a running instance of passwordpub. 
+Alternatively, you can use docker-compose from the [container](container) directory to quickly bring up a running instance of passwordpub and an nginx proxy server. With this method, the service will be available on port 80 (http). If using passwordpub on a non-default (!=5000), be sure to update the [nginx.conf](bar_kit/nginx/nginx.conf) file.
 
 ```
 docker-compose up
+curl http://127.0.0.1/api
 ```
 
 <!---
