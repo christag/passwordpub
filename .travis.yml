@@ -2,8 +2,6 @@ dist: xenial
 language: python
 python: 3.7
 
-install: pip install -r requirements
-
 stages:
 - Test-App
 - Test-Docker-App
@@ -20,11 +18,12 @@ env:
 jobs:
   include:
   - stage: Test-App
+    install: pip install -r requirements
     script: pytest
   - stage: Test-Docker-App
     services: docker
     before_install:
-    - docker image build -t christag/passwordpub:latest -f ./container/app/Dockerfile
+    - docker image build -t christag/passwordpub:latest -f ./container/app/Dockerfile .
     - docker ps -a
     - docker container run -d -p 5000:5000 passwordpub:latest
     script: curl http://127.0.0.1:5000/api?recipe=TWTNS
