@@ -1,6 +1,20 @@
 # ./.travis.yml
+
 dist: xenial
 language: python
 python: 3.7
+
 install: pip install -r requirements
-script: pytest
+
+stages:
+  - compile
+  - test
+  - name: deploy
+    if: branch = master
+
+jobs:
+  include:
+    - stage: test
+      script: pytest
+    - stage: deploy
+      script: echo testing!
