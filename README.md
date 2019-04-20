@@ -35,7 +35,7 @@ A [Dockerfile](container/Dockerfile) is included in the [container](container/) 
 Build the container from the parent directory.
 
 ```
-docker image build -t passwordpub:latest -f ./container/Dockerfile .
+docker image build -t passwordpub:latest -f ./container/app/Dockerfile .
 ```
 
 Run the docker container. Change the port if you've updated the configuration file.
