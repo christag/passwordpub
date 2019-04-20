@@ -23,7 +23,15 @@ jobs:
   - stage: Test-Docker-App
     services: docker
     before_install:
-    - docker image build -t christag/passwordpub:latest -f ./container/app/Dockerfile .
-    - docker ps -a
-    - docker container run -d -p 5000:5000 christag/passwordpub:latest
-    script: curl http://127.0.0.1:5000/api?recipe=TWTNS
+      - docker image build -t "${IMAGE_NAME}" -f ./container/app/Dockerfile .
+      - docker image ls -a
+      - docker container run -d -p 5000:5000 "${IMAGE_NAME}"
+    script: docker container ls | grep -q passwordpub
+  - stage: Deploy-Docker-App
+    services: docker
+    before_deploy:
+      - docker login -u "$DOCKERHUB_USER" -p "DOCKERHUB_PW"
+      - docker image build -t "${IMAGE_NAME}:latest" -f ./container/app/Dockerfile .
+    deploy:
+      provider: script
+      script: docker push "${IMAGE_NAME}:latest"
