@@ -5,8 +5,8 @@ python: 3.7
 stages:
 - Test-App
 - Test-Docker-App
-- name: Deploy-Docker-App
-  if: branch = master
+- Deploy-Docker-App
+
 
 env:
   global:
@@ -31,7 +31,10 @@ jobs:
     services: docker
     before_deploy:
       - docker login -u "$DOCKERHUB_USER" -p "DOCKERHUB_PW"
-      - docker image build -t "${IMAGE_NAME}:latest" -f ./container/app/Dockerfile .
+      - docker image build -t "${IMAGE_NAME}" -f ./container/app/Dockerfile .
+      - docker tag "$IMAGE_NAME" "${IMAGE_NAME}:latest"
     deploy:
       provider: script
       script: docker push "${IMAGE_NAME}:latest"
+      on:
+        branch: master
