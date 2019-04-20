@@ -5,7 +5,6 @@ python: 3.7
 stages:
 - Test-App
 - Test-Docker-App
-- Deploy-Docker-App
 
 
 env:
@@ -27,14 +26,3 @@ jobs:
       - docker image ls -a
       - docker container run -d -p 5000:5000 "${IMAGE_NAME}"
     script: docker container ls | grep -q passwordpub
-  - stage: Deploy-Docker-App
-    services: docker
-    before_deploy:
-      - docker login -u "$DOCKERHUB_USER" -p "DOCKERHUB_PW"
-      - docker image build -t "${IMAGE_NAME}" -f ./container/app/Dockerfile .
-      - docker tag "$IMAGE_NAME" "${IMAGE_NAME}:latest"
-    deploy:
-      provider: script
-      script: docker push "${IMAGE_NAME}:latest"
-      on:
-        branch: master
