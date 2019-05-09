@@ -51,28 +51,6 @@ docker-compose up
 curl http://127.0.0.1/api
 ```
 
-<!---
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
---->
-
 ## Usage
 
 While running, the application can be accessed in a web browser at http://127.0.0.1:5000, http://localhost:5000, etc. This loads the graphical index.html where a clipart bartender will present a new password on the screen and will generate a new one every time the page is refreshed. The passwords generated here are based on the [config.yml](config.yml) options.
